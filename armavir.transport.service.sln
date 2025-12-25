@@ -1,10 +1,50 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "implementations", "implementations", "{8B27FA81-C8E9-4E19-B438-BDF585671BE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{278CFD20-22A0-4C14-A13E-5E6F3F041109}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "armavir.transport.gateway", "armavir.transport.gateway\armavir.transport.gateway.csproj", "{0DC64399-DBDA-48B0-90E0-ECDB1B066270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "armavir.transport.core", "implementations\armavir.transport.core\armavir.transport.core.csproj", "{FCDD458A-CE42-442B-AC3C-1BEC633B932A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core.abstractions", "Abstractions\core.abstractions\core.abstractions.csproj", "{13C7BB9B-47CA-432E-949D-486550EF2580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dal.abstractions", "Abstractions\dal.abstractions\dal.abstractions.csproj", "{395A1D1F-16AD-4A88-8611-A8737994C5E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "armavir.transport.dal", "implementations\armavir.transport.dal\armavir.transport.dal.csproj", "{5A718DE8-AD66-4093-A0B0-4F5C59D893B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DC64399-DBDA-48B0-90E0-ECDB1B066270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC64399-DBDA-48B0-90E0-ECDB1B066270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC64399-DBDA-48B0-90E0-ECDB1B066270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC64399-DBDA-48B0-90E0-ECDB1B066270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCDD458A-CE42-442B-AC3C-1BEC633B932A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDD458A-CE42-442B-AC3C-1BEC633B932A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDD458A-CE42-442B-AC3C-1BEC633B932A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDD458A-CE42-442B-AC3C-1BEC633B932A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13C7BB9B-47CA-432E-949D-486550EF2580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C7BB9B-47CA-432E-949D-486550EF2580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C7BB9B-47CA-432E-949D-486550EF2580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C7BB9B-47CA-432E-949D-486550EF2580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395A1D1F-16AD-4A88-8611-A8737994C5E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395A1D1F-16AD-4A88-8611-A8737994C5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395A1D1F-16AD-4A88-8611-A8737994C5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395A1D1F-16AD-4A88-8611-A8737994C5E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A718DE8-AD66-4093-A0B0-4F5C59D893B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A718DE8-AD66-4093-A0B0-4F5C59D893B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A718DE8-AD66-4093-A0B0-4F5C59D893B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A718DE8-AD66-4093-A0B0-4F5C59D893B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCDD458A-CE42-442B-AC3C-1BEC633B932A} = {8B27FA81-C8E9-4E19-B438-BDF585671BE3}
+		{13C7BB9B-47CA-432E-949D-486550EF2580} = {278CFD20-22A0-4C14-A13E-5E6F3F041109}
+		{395A1D1F-16AD-4A88-8611-A8737994C5E9} = {278CFD20-22A0-4C14-A13E-5E6F3F041109}
+		{5A718DE8-AD66-4093-A0B0-4F5C59D893B8} = {8B27FA81-C8E9-4E19-B438-BDF585671BE3}
 	EndGlobalSection
 EndGlobal
