@@ -1,3 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
+using armavir.transport.dal;
 
-Console.WriteLine("Hello, World!");
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+
+builder.Services.AddOpenApi();
+
+builder.Services.AddDal(builder.Configuration);
+
+var app = builder.Build();
+
+app.MapOpenApi();
+
+app.MapControllers();
+
+app.Services.MigrateDb();
+
+app.Run();
