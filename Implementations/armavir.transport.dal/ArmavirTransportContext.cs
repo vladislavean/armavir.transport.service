@@ -30,7 +30,7 @@ public class ArmavirTransportContext : DbContext, IModelReader, IModelUpdater
     public virtual DbSet<TransportStops> TransportStops { get; set; }
     
     IQueryable<Transports> IModelReader.Transports => Transports
-        .Include(x => x.Stop)
+        .Include(x => x.TransportStops)
         .AsNoTracking();
     
     IQueryable<TransportStops> IModelReader.TransportStops => TransportStops

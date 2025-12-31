@@ -1,8 +1,7 @@
-namespace armavir.transport.dal.Entities;
+namespace dal.abstractions.Models;
 
-public class Transports
+public class CreateTransportCommandRepositoryModel
 {
-    public Guid Id { get; set; }
     public required string Name { get; set; }
     public required string Number { get; set; }
     public required bool IsActive { get; set; }
@@ -10,6 +9,4 @@ public class Transports
     public required int MaxCount { get; set; }
     public required double ShortRoute { get; set; }
     public required double LongRoute { get; set; }
-    
-    public virtual ICollection<TransportStops>? TransportStops { get; set; }
 }

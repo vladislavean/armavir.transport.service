@@ -28,7 +28,7 @@ public class TransportStopsConfiguration : IEntityTypeConfiguration<TransportSto
             .IsRequired();
             
         builder.HasOne(ts => ts.Transport)
-            .WithMany(t => t.Stop)
+            .WithMany(t => t.TransportStops)
             .HasForeignKey(ts => ts.TransportId)
             .OnDelete(DeleteBehavior.Cascade);
                 

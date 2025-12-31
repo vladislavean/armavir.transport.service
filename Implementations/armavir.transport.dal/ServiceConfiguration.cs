@@ -1,4 +1,7 @@
 using armavir.transport.dal.InternalInterfaces;
+using armavir.transport.dal.Profiles;
+using AutoMapper;
+using dal.abstractions.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +42,10 @@ public static class ServiceConfiguration
             var context = x.GetRequiredService<ArmavirTransportContext>();
             return context;
         });
+        
+        // repositories
+
+        services.AddScoped<ITransportCommandRepository, ITransportCommandRepository>();
     }
     
     public static void MigrateDb(this IServiceProvider serviceProvider)
@@ -55,5 +62,10 @@ public static class ServiceConfiguration
             Console.WriteLine(e);
             throw;
         }
+    }
+    
+    public static void AddDalProfiles(this IMapperConfigurationExpression config)
+    {
+        config.AddProfile<DalMapperProfiles>();
     }
 }

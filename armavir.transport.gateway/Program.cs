@@ -1,9 +1,11 @@
 using armavir.transport.dal;
+using armavir.transport.gateway.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.ConfigureMapper();
 
+builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDal(builder.Configuration);

@@ -38,7 +38,7 @@ public class TransportsConfiguration : IEntityTypeConfiguration<Transports>
             .IsRequired()
             .HasColumnType("decimal(10,2)");
             
-        builder.HasMany(t => t.Stop)
+        builder.HasMany(t => t.TransportStops)
             .WithOne(ts => ts.Transport)
             .HasForeignKey(ts => ts.TransportId)
             .OnDelete(DeleteBehavior.Cascade);
