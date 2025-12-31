@@ -9,6 +9,7 @@ public class DalMapperProfiles : Profile
     public DalMapperProfiles()
     {
         CreateMap<CreateTransportCommandRepositoryModel, Transports>()
-            .ForMember(dest => dest.Id, opt => opt.Ignore());
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.TransportStops, opt => opt.Ignore());
     }
 }

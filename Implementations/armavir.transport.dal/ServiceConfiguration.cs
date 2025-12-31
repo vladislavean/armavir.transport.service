@@ -1,11 +1,11 @@
 using armavir.transport.dal.InternalInterfaces;
 using armavir.transport.dal.Profiles;
+using armavir.transport.dal.Repositories;
 using AutoMapper;
 using dal.abstractions.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace armavir.transport.dal;
 
@@ -45,7 +45,7 @@ public static class ServiceConfiguration
         
         // repositories
 
-        services.AddScoped<ITransportCommandRepository, ITransportCommandRepository>();
+        services.AddScoped<ITransportCommandRepository, TransportCommandRepository>();
     }
     
     public static void MigrateDb(this IServiceProvider serviceProvider)

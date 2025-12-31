@@ -26,5 +26,6 @@ internal sealed class TransportCommandRepository(
         
         var entity = mapper.Map<Transports>(repositoryModel);
         await modelUpdater.Transports.AddAsync(entity);
+        await modelUpdater.SaveChangesAsync();
     }
 }
