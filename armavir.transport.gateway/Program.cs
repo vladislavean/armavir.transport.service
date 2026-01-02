@@ -1,3 +1,4 @@
+using armavir.transport.core;
 using armavir.transport.dal;
 using armavir.transport.gateway.Application;
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDal(builder.Configuration);
+builder.Services.ConfigureCore();
 
 var app = builder.Build();
 

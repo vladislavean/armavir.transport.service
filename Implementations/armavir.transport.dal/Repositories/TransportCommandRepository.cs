@@ -28,4 +28,20 @@ internal sealed class TransportCommandRepository(
         await modelUpdater.Transports.AddAsync(entity);
         await modelUpdater.SaveChangesAsync();
     }
+
+    public async Task DeleteTransport(Guid id)
+    {
+        var model = await modelUpdater.Transports
+            .Where(x => x.Id == id)
+            .AsNoTracking()
+            .FirstOrDefaultAsync();
+
+        if (model == null)
+        {
+            throw new Exception("Not Found");
+        }
+
+        modelUpdater.Transports.Remove(model);
+        await modelUpdater.SaveChangesAsync();
+    }
 }

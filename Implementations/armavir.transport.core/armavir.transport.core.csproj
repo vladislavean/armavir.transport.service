@@ -7,7 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Operations\" />
+      <ProjectReference Include="..\..\Abstractions\core.abstractions\core.abstractions.csproj" />
+      <ProjectReference Include="..\..\Abstractions\dal.abstractions\dal.abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.1.1" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
     </ItemGroup>
 
 </Project>

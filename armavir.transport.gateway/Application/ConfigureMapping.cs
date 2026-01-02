@@ -1,3 +1,4 @@
+using armavir.transport.core;
 using armavir.transport.dal;
 using AutoMapper;
 
@@ -7,9 +8,11 @@ public static class ConfigureMapping
 {
     public static void ConfigureMapper(this IServiceCollection services)
     {
+        
         var mapperConfig = new MapperConfiguration(mc =>
         {
             mc.AddDalProfiles();
+            mc.ConfigureCoreMapper();
         });
         mapperConfig.AssertConfigurationIsValid();
         IMapper mapper = mapperConfig.CreateMapper();

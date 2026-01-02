@@ -12,33 +12,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="appsettings.Development.json">
-        <DependentUpon>appsettings.json</DependentUpon>
-      </Content>
-      <Content Remove="Services\**" />
-      <Content Remove="Controllers\**" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Abstractions\core.abstractions\core.abstractions.csproj" />
       <ProjectReference Include="..\Abstractions\dal.abstractions\dal.abstractions.csproj" />
       <ProjectReference Include="..\implementations\armavir.transport.core\armavir.transport.core.csproj" />
       <ProjectReference Include="..\implementations\armavir.transport.dal\armavir.transport.dal.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Remove="Services\**" />
-      <Compile Remove="Controllers\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="Services\**" />
-      <EmbeddedResource Remove="Controllers\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Services\**" />
-      <None Remove="Controllers\**" />
     </ItemGroup>
 
 </Project>

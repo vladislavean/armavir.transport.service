@@ -5,4 +5,5 @@ namespace dal.abstractions.Repositories;
 public interface ITransportCommandRepository
 {
     Task CreateTransport(CreateTransportCommandRepositoryModel repositoryModel);
+    Task DeleteTransport(Guid id);
 }
