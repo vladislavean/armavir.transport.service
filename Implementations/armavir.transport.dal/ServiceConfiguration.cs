@@ -46,6 +46,7 @@ public static class ServiceConfiguration
         // repositories
 
         services.AddScoped<ITransportCommandRepository, TransportCommandRepository>();
+        services.AddScoped<ITransportQueryRepository, TransportQueryRepository>();
     }
     
     public static void MigrateDb(this IServiceProvider serviceProvider)
@@ -64,8 +65,16 @@ public static class ServiceConfiguration
         }
     }
     
-    public static void AddDalProfiles(this IMapperConfigurationExpression config)
+    public static void ConfigureDalMapperProfiles(this IMapperConfigurationExpression mc)
     {
-        config.AddProfile<DalMapperProfiles>();
+        var profiles = typeof(DalMapperProfiles)
+            .Assembly
+            .GetTypes()
+            .Where(x => typeof(Profile).IsAssignableFrom(x));
+
+        foreach (var profile in profiles)
+        {
+            mc.AddProfile(Activator.CreateInstance(profile) as Profile);
+        }
     }
 }

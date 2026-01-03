@@ -10,5 +10,5 @@ public sealed record GetTransportsDto
     public required int MaxCount { get; init; }
     public required double ShortRoute { get; init; }
     public required double LongRoute { get; init; }
-    public required List<GetTransportStopsDto> Stops { get; init; }
+    public required IEnumerable<GetTransportStopsDto> Stops { get; init; }
 }

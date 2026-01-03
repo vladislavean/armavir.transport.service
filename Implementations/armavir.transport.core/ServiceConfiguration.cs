@@ -11,10 +11,19 @@ public static class ServiceConfiguration
     public static void ConfigureCore(this IServiceCollection services)
     {
         services.AddScoped<ICommandTransportOperations, CommandTransportOperations>();
+        services.AddScoped<IQueryTransportOperations, QueryTransportOperations>();
     }
 
-    public static void ConfigureCoreMapper(this IMapperConfigurationExpression config)
+    public static void ConfigureCoreProfiles(this IMapperConfigurationExpression mc)
     {
-        config.AddProfile<CoreProfiles>();
+        var profiles = typeof(CoreProfiles)
+            .Assembly
+            .GetTypes()
+            .Where(x => typeof(Profile).IsAssignableFrom(x));
+
+        foreach (var profile in profiles)
+        {
+            mc.AddProfile(Activator.CreateInstance(profile) as Profile);
+        }
     }
 }

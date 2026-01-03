@@ -10,5 +10,5 @@ public sealed record GetTransportOperationModel
     public required int MaxCount { get; init; }
     public required double ShortRoute { get; init; }
     public required double LongRoute { get; init; }
-    public required List<GetTransportStopsOperationModel> Stops { get; init; }
+    public required ICollection<GetTransportStopsOperationModel> Stops { get; init; }
 }

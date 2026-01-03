@@ -11,8 +11,11 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDal(builder.Configuration);
 builder.Services.ConfigureCore();
+builder.Services.ConfigureSwaggerServices();
 
 var app = builder.Build();
+
+app.ConfigureSwaggerPipeline();
 
 app.MapOpenApi();
 
