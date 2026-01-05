@@ -6,4 +6,6 @@ public interface ICommandTransportOperations
 {
     Task<Result> CreateTransportAsync(CreateTransportOperationModel createTransportOperationModel);
     Task<Result> DeleteTransport(Guid id);
+
+    Task<Result> ActualizeTransportData();
 }

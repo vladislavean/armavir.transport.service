@@ -9,6 +9,7 @@ namespace armavir.transport.gateway.Controllers;
 [Route("[controller]")]
 public sealed class TransportController(
     IQueryTransportOperations queryTransportOperations,
+    ICommandTransportOperations commandTransportOperations,
     IMapper mapper
     ) : ControllerBase
 {
@@ -24,5 +25,12 @@ public sealed class TransportController(
 
         var model = mapper.Map<GetTransportsDto>(result.Value);
         return model;
+    }
+
+    [HttpPost]
+    [Route("actualizeTransportData")]
+    public async Task ActualizeTransportData()
+    {
+        var result = await commandTransportOperations.ActualizeTransportData();
     }
 }

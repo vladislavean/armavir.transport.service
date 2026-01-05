@@ -5,7 +5,7 @@ using AutoMapper;
 
 namespace armavir.transport.gateway.Application;
 
-public static class ConfigureMapping
+public static class ProfileConfiguration
 {
     public static void ConfigureMapper(this IServiceCollection services)
     {

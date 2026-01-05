@@ -9,6 +9,7 @@ builder.Services.ConfigureMapper();
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
+builder.Services.ConfigureOptions(builder.Configuration);
 builder.Services.AddDal(builder.Configuration);
 builder.Services.ConfigureCore();
 builder.Services.ConfigureSwaggerServices();
