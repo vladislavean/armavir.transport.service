@@ -14,7 +14,8 @@ internal sealed class CommandTransportOperations(
     ITransportCommandRepository transportCommandRepository,
     IGetHtmlServices getHtmlServices,
     IMapper mapper,
-    IOptions<TransportPageOptions> transportPageOptions
+    IOptions<TransportPageOptions> transportPageOptions,
+    IParseHtmlServices parseHtmlServices
     ) 
     : ICommandTransportOperations
 {
@@ -40,8 +41,8 @@ internal sealed class CommandTransportOperations(
         {
             return Result.Failure(htmlContent.Error);
         }
-        
-        
+
+        var result = parseHtmlServices.ParseHtml(htmlContent.Value);
         
         return Result.Success();
     }

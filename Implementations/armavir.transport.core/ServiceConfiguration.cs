@@ -19,6 +19,7 @@ public static class ServiceConfiguration
         // services
 
         services.AddScoped<IGetHtmlServices, GetHtmlServices>();
+        services.AddScoped<IParseHtmlServices, ParseHtmlServices>();
     }
 
     public static void ConfigureCoreProfiles(this IMapperConfigurationExpression mc)
