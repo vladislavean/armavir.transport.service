@@ -5,4 +5,6 @@ namespace dal.abstractions.Repositories;
 public interface IStopQueryRepository
 {
     Task<StopRepositoryModel?> GetStopByName(string name);
+
+    Task<ICollection<StopRepositoryModel>?> GetStopsByNamesBatchAsync(ICollection<string> name);
 }

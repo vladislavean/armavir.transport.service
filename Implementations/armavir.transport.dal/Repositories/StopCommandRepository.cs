@@ -13,4 +13,13 @@ internal sealed class StopCommandRepository(
         var model = new Stops { Id = Guid.NewGuid(), Name = name };
         await modelUpdater.Stops.AddAsync(model);
     }
+
+    public async Task CreateStopBatchAsync(IEnumerable<string> names)
+    {
+        var model = names
+            .Select(x => new Stops { Id = Guid.NewGuid(), Name = x })
+            .ToList();
+        await modelUpdater.Stops.AddRangeAsync(model);
+        await modelUpdater.SaveChangesAsync();
+    }
 }

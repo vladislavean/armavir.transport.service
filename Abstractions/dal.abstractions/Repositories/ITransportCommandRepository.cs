@@ -6,4 +6,5 @@ public interface ITransportCommandRepository
 {
     Task CreateTransport(CreateTransportCommandRepositoryModel repositoryModel);
     Task DeleteTransport(Guid id);
+    Task CreateTransportBatchAsync(ICollection<CreateTransportCommandRepositoryModel> repositoryModel);
 }

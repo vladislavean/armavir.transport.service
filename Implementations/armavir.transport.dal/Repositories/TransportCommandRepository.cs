@@ -28,7 +28,24 @@ internal sealed class TransportCommandRepository(
         await modelUpdater.Transports.AddAsync(entity);
         await modelUpdater.SaveChangesAsync();
     }
+    
+    public async Task CreateTransportBatchAsync(ICollection<CreateTransportCommandRepositoryModel> repositoryModel);
+    {
+        var model = await modelUpdater.Transports
+            .Where(x => x.Number == repositoryModel.Number)
+            .AsNoTracking()
+            .ToListAsync();
 
+        if (model.Count != 0)
+        {
+            throw new Exception($"There is already a transport with the number {repositoryModel.Number}");
+        }
+        
+        var entity = mapper.Map<Transports>(repositoryModel);
+        await modelUpdater.Transports.AddAsync(entity);
+        await modelUpdater.SaveChangesAsync();
+    }
+    
     public async Task DeleteTransport(Guid id)
     {
         var model = await modelUpdater.Transports

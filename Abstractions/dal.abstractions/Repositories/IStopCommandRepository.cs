@@ -1,6 +1,7 @@
 namespace dal.abstractions.Repositories;
 
 public interface IStopCommandRepository
-{
-    public Task CreateStop(string name);
+{ 
+    Task CreateStop(string name);
+    Task CreateStopBatchAsync(IEnumerable<string> names);
 }

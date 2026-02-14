@@ -17,4 +17,15 @@ internal sealed class StopQueryRepository(
             new StopRepositoryModel() { Id = stopEntity.Id, Name = stopEntity.Name } 
             : null;
     }
+
+    public async Task<ICollection<StopRepositoryModel>?> GetStopsByNamesBatchAsync(ICollection<string> name)
+    {
+        var stopEntites = await modelReader.Stops
+            .Where(x => name.Contains(x.Name))
+            .ToListAsync();
+
+        return stopEntites
+            .Select(x => new StopRepositoryModel() { Id = x.Id, Name = x.Name })
+            .ToList();
+    }
 }
